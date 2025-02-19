@@ -13,11 +13,11 @@
 
 int compute_var_line_size(const char *name, const char *value)
 {
-    int len_name = strlen(name);
+    int len_name = my_strlen(name);
     int len_val = 0;
 
     if (value) {
-        len_val = strlen(value);
+        len_val = my_strlen(value);
     }
     return (len_name + 1 + len_val + 1);
 }
