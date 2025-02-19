@@ -7,7 +7,13 @@
 
 CC	=	gcc
 
-SRC	=	main.c	\
+SRC	=	main.c			\
+		shell_loop.c 	\
+		read_line.c		\
+		my_strcpy.c		\
+		my_strdup.c		\
+		my_str_to_word_array.c 	\
+		parse_command.c \
 
 OBJ	=	$(SRC:.c=.o)
 
