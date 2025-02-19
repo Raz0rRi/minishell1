@@ -14,6 +14,7 @@ char **my_str_to_word_array(char *arr);
 char **parse_command(const char *line);
 char *my_strdup(char const *src);
 char *my_strcpy(char *dest, char const *src);
-
+char **copy_env(char **env);
+void free_env(char **envp);
 
 #endif /* !MINISHELL_H_ */
