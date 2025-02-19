@@ -1,8 +1,8 @@
 /*
 ** EPITECH PROJECT, 2025
-** mysh
+** minishellzebi
 ** File description:
-** environment manager (part 5)
+** env_manager
 */
 
 #include <stdlib.h>

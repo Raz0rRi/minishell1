@@ -14,6 +14,7 @@ SRC	=	main.c			\
 		my_strdup.c		\
 		my_str_to_word_array.c 	\
 		parse_command.c \
+		cd_n_exit.c 	\
 
 OBJ	=	$(SRC:.c=.o)
 

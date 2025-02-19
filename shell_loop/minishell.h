@@ -16,5 +16,8 @@ char *my_strdup(char const *src);
 char *my_strcpy(char *dest, char const *src);
 char **copy_env(char **env);
 void free_env(char **envp);
+int builtin_cd(char **args);
+int builtin_exit(char **args);
+int my_getnbr(const char *str);
 
-#endif /* !MINISHELL_H_ */
+#endif /* MINISHELL_H_ */
