@@ -20,5 +20,5 @@ char **parse_command(const char *line)
         return NULL;
     args = my_str_to_word_array(dup);
     free(dup);
-    return args; 
+    return args;
 }

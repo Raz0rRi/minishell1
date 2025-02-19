@@ -19,5 +19,8 @@ void free_env(char **envp);
 int builtin_cd(char **args);
 int builtin_exit(char **args);
 int my_getnbr(const char *str);
+int builtin_cd(char **args);
+int builtin_exit(char **args);
+char *search_in_path(const char *cmd, char **env);
 
 #endif /* MINISHELL_H_ */

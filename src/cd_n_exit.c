@@ -17,7 +17,7 @@ int builtin_cd(char **args)
 
     if (!args[1]) {
         write(2, "cd: Too few arguments.\n", 23);
-        return 1; 
+        return 1;
     }
     ret = chdir(args[1]);
     if (ret != 0) {
