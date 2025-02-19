@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "my_getnbr.C": "cpp"
+        "my_getnbr.C": "cpp",
+        "minishell.h": "c"
     }
 }

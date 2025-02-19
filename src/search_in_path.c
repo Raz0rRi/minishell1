@@ -59,28 +59,35 @@ static int is_executable_file(const char *buffer)
     return 1;
 }
 
-char *search_in_path(const char *cmd, char **env)
+static char *search_in_path_loop(char *save, const char *cmd)
 {
-    char *path_var = get_path_var(env);
-    char *save = my_strdup(path_var);
-    char *token;
     char buffer[512];
+    char *token = strtok(save, ":");
 
-    if (!path_var) {
-        return NULL;
-    }
-    if (!save) {
-        return NULL;
-    }
-    token = strtok(save, ":");
     while (token) {
         build_path(buffer, token, cmd);
         if (is_executable_file(buffer)) {
-            free(save);
             return my_strdup(buffer);
         }
         token = strtok(NULL, ":");
     }
-    free(save);
     return NULL;
+}
+
+char *search_in_path(const char *cmd, char **env)
+{
+    char *path_var = get_path_var(env);
+    char *save;
+    char *result;
+
+    if (!path_var) {
+        return NULL;
+    }
+    save = my_strdup(path_var);
+    if (!save) {
+        return NULL;
+    }
+    result = search_in_path_loop(save, cmd);
+    free(save);
+    return result;
 }

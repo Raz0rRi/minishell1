@@ -6,6 +6,7 @@
 */
 
 #include <stdio.h>
+#include "minishell.h"
 
 char *my_strdup(char const *src)
 {
