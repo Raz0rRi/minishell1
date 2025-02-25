@@ -11,16 +11,17 @@
 #include <stdio.h>
 #include "minishell.h"
 
-static int find_var_index(char **envp, const char *name)
+int find_var_index(char **envp, const char *name)
 {
     int i = 0;
     int len = 0;
 
     if (!envp || !name)
         return -1;
-    len = strlen(name);
+    len = my_strlen(name);
     while (envp[i]) {
-        if (strncmp(envp[i], name, len) == 0 && envp[i][len] == '=') {
+        if (my_strncmp(envp[i], (char *)name, len)
+        == 0 && envp[i][len] == '=') {
             return i;
         }
         i++;
@@ -28,7 +29,7 @@ static int find_var_index(char **envp, const char *name)
     return -1;
 }
 
-static int realloc_env_for_new(char ***envp, char *new_line)
+int realloc_env_for_new(char ***envp, char *new_line)
 {
     char **old_env = *envp;
     int count = 0;

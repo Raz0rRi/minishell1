@@ -1,6 +1,6 @@
 /*
 ** EPITECH PROJECT, 2025
-** minishellzebi
+** minishell1
 ** File description:
 ** builtin_env_help
 */

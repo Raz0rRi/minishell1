@@ -11,9 +11,13 @@
 #include <stdbool.h>
 #include "minishell.h"
 
+extern char **environ;
+
 void shell_loop(void)
 {
     bool running = true;
+    int return_code = 0;
+    char **envp = copy_env(environ);
     char *line;
 
     while (running) {
@@ -27,6 +31,8 @@ void shell_loop(void)
             free(line);
             continue;
         }
+        dispatch_command(line, &envp, &return_code);
         free(line);
     }
+    free_env(envp);
 }
